@@ -1,18 +1,11 @@
-import {
-  decrement,
-  incrementByAmount,
-} from './redux/features/counter/counterSlice';
-import { useAppDispatch, useAppSelector } from './redux/hooks';
+import { Toaster } from './components/ui/Toaster';
+import MainLayout from './layouts/MainLayout';
 
 function App() {
-  const dispatch = useAppDispatch();
-  const { count } = useAppSelector((state) => state.counter);
-
   return (
     <div>
-      <button onClick={() => dispatch(incrementByAmount(5))}>Increment</button>
-      {count}
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <Toaster />
+      <MainLayout />
     </div>
   );
 }
